@@ -1,0 +1,21 @@
+<div>
+  <div class="top-area">
+    <p class="top-title">TOP (予定一覧表示)</p>
+  </div>
+  <div class="main-area">
+    <app-filter-list (changeFilter)="changeFilter($event)"></app-filter-list>
+    <div class="flex justify-center">
+      <ul class="todo-list">
+        <li>
+          <button class="add-button primary" [routerLink]="['/add']">
+            新規登録
+          </button>
+        </li>
+        <li *ngIf="!todoList.length">登録されている予定はありません。</li>
+        <li *ngFor="let todo of todoList">
+          <app-todo-list [todo]="todo" (proceedStatus)="proceedStatus($event)"></app-todo-list>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

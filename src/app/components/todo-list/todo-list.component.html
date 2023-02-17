@@ -1,0 +1,22 @@
+<div class="flex flex-row justify-center items-center">
+  <div class="todo-description text-left">
+    <p [class.done]="todo.status === 2">
+      {{ todo.title }}
+    </p>
+    <p>{{ todo.startDate }} ~ {{ todo.endDate }}</p>
+  </div>
+  <div class="button-area">
+    <button
+      [routerLink]="['/detail', todo.id]"
+      class="positive"
+    >
+      詳細
+    </button>
+    <button
+      class="button {{ getButtonClass() }}"
+      (click)="onClickProceedStatus()"
+    >
+      {{ getStatusName() }}
+    </button>
+  </div>
+</div>

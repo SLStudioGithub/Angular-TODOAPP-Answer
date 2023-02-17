@@ -1,0 +1,36 @@
+<div class="flex justify-center flex-column">
+  <div class="top-area">
+    <p class="top-title">予定詳細</p>
+  </div>
+  <div class="main-area">
+    <div class="my-5">
+      <input
+        class="input-text"
+        placeholder="タイトル"
+        type="text"
+        [(ngModel)]="todo.title"
+      />
+    </div>
+    <div class="my-5">
+      <textarea
+        class="input-textarea"
+        placeholder="内容"
+        name=""
+        id=""
+        cols="30"
+        rows="10"
+        [(ngModel)]="todo.description"
+      ></textarea>
+    </div>
+    <div class="flex justify-between my-5 width-full">
+      <input class="input-date" type="date" [(ngModel)]="todo.startDate" />
+      <p>~</p>
+      <input class="input-date" type="date" [(ngModel)]="todo.endDate" />
+    </div>
+
+    <div class="flex flex-row gap-16">
+      <button class="edit-button positive" (click)="editTodo()">編集</button>
+      <button class="delete-button critical" (click)="deleteTodo()">削除</button>
+    </div>
+  </div>
+</div>
